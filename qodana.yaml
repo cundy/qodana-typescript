@@ -1,0 +1,27 @@
+version: "1.0"
+linter: jetbrains/qodana-js:latest
+failThreshold: 0
+profile:
+  name: qodana.recommended
+exclude:
+  - name: All
+    paths:
+      - node_modules/
+
+include:
+  - name: Eslint
+  - name: DuplicateCode
+  - name: CyclomaticComplexityJS
+  - name: GrazieInspection
+  - name: IdentifierGrammar
+  - name: LanguageDetectInspection
+  - name: CheckDependencyLicenses
+
+licenseRules:
+  - keys:
+      - "Apache-2.0"
+    allowed:
+      - "MIT"
+      - "LGPL"
+
+fixesStrategy: apply
